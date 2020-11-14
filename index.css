@@ -1,11 +1,256 @@
 body {
-    background-color: #eeeeee;
+    background-color: #fff;
     margin: 0;
+    width: 100%;
+    overflow: hidden;
 }
 
 #header {
     background-color: #000;
     width: 100%;
-    height: 70px;
+    height: 60px;
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 15px;
+}
+
+#header-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#header-left div {
+    margin-left: 15px;
+}
+
+#header-search {
+    border: 1px solid rgba(238, 238, 238, 0.432);
+    border-radius: 5px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 4px;
+    transition-duration: 0.5s;
+}
+
+#header-search:focus-within {
+    width: 500px;
+    background-color: #fff;
+    transition-duration: 0.5s;
+}
+
+#header-search:focus-within input::placeholder{
+    color: #000;
+}
+
+#header-search:focus-within button {
+    color: #fff;
+    border-color: #fff;
+}
+
+#header-search input {
+    background-color: transparent;
+    color: #fff;
+    width: 95%;
+    border: none;
+}
+
+#header-search input:focus {
+    outline: none;
+    color: #000;
+}
+
+#header-search input::placeholder {
+    color: rgba(238, 238, 238, 0.829);
+    font-size: 14px;
+}
+
+
+#header-search button {
+    background-color: transparent;
+    color: rgba(238, 238, 238, 0.432);;
+    border: 1px solid rgba(238, 238, 238, 0.432);
+    border-radius: 5px;
+    outline: none;
+    margin: 0;
+}
+
+#logo img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+#header-links {
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#header-links .link {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#header-icons button{
+    background-color: transparent;
+    border:none;
+    outline: none;
+    color: #fff;
+}
+
+.flex{
+    flex: 1
+}
+
+#header-right {
+    margin-right: 10px;
+}
+
+#header-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#header-right button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+#header-right img {
+    margin-right: 2px;
+}
+
+#header-right .avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+}
+
+#sub-header {
+    position: relative;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+    z-index: -1;
+}
+
+#sub-header button {
+    margin: 5px;
+    font-size: 14px;
+    padding: 10px;;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+}
+
+#sub-header .active {
+    border-bottom: 2px solid salmon;
+}
+
+#sub-header .active .description {
+    font-weight: bold;
+}
+
+#sub-header .count {
+    margin-left: 5px;
+    background-color: #ddd;
+    border-radius: 25px;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+
+#contents-right {
+    position: relative;
+    top: -30px;
+}
+
+#contents-right .avatar {
+    position: relative;
+    width: 279px;
+    height: 279px;
+    border-radius: 50%;
+    margin: 20px;
+    margin-left: 30px;
+}
+
+#contents-right .avatar button {
+    background-color: #fff;
+    border-radius: 25px;
+    position: absolute;
+    bottom: 35px;
+    left: 240px;
+    border: 1px solid #eee;
+    outline: none;
+    width:  35px;
+    height: 35px;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    font-size: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#set-status {
+    display: none;
+    font-size: 13px;
+    align-self: center;
+}
+
+#contents-right .avatar button:hover {
+    width:  100px;
+    justify-content: space-between;
+    color: rgb(0, 110, 255);
+}
+
+#contents-right .avatar button:hover #set-status{
+    display: block;
+}
+
+#contents-right .avatar img{
+  border-radius: 50%;
+  width: 100%;
+}
+
+#contents-right .profile {
+    margin-left: 30px;
+    font-family: sans-serif;
+}
+
+#contents-right .profile .name{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#contents-right .profile .username{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.568);
+}
+
+#contents-right .profile .bio{
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.555);
 }

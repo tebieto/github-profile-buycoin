@@ -7,6 +7,72 @@
         <script defer type="module" src="./index.js"></script>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <div id="header">
+                <div id="header-left">
+                    <div id="logo">
+                        <img src="./assets/apple-touch-icon.png">
+                    </div>
+                    <div id="header-search">
+                        <input placeholder="Search or jump to..." type="text"  />
+                        <button>/</button>
+                    </div>
+                    <div id="header-links">
+                        <div class="link">Pull Requests</div>
+                        <div class="link">Issues</div>
+                        <div class="link">Market Place</div>
+                        <div class="link">Explore</div>
+                    </div>
+                </div>
+                <div class="flex"></div>
+                <div id="header-right">
+                    <div id="header-icons">
+                        <button>
+                            <img  class="icon" src="./assets/notification.png" />
+                        </button>
+                        <button>
+                            <img  class="icon" src="./assets/plus.png" />
+                            <span>&#9662;</span>
+                        </button>
+                        <button>
+                            <img  class="avatar" src="./assets/tebieto.jpeg" />
+                            <span>&#9662;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sub-header">
+                <button>
+                    <span>Overview</span>
+                </button>
+                <button class="active">
+                    <span class="description">Repositories</span>
+                    <div class="count">40</div>
+                </button>
+                <button>
+                    <span>Projects</span>
+                </button>
+                <button>
+                    <span>Packages</span>
+                </button>
+            </div>
+            <div id="contents">
+                <div id="contents-right">
+                    <div class="avatar">
+                        <img src="./assets/tebieto.jpeg" />
+                        <button>
+                            <span>&#9786;</span>
+                            <span id="set-status">Set status</span>
+                        </button>
+                    </div>
+                    <div class="profile">
+                        <div class="name">Terry Ebieto</div>
+                        <div class="username">tebieto</div>
+                        <div class="bio">Software Engineer Extraordinaire</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
