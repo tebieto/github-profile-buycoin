@@ -9,6 +9,7 @@
     <body>
         <div id="app">
             <div id="header">
+                <img src="./assets/menu.png" alt="" id="menu-icon">
                 <div id="header-left">
                     <div id="logo">
                         <img src="./assets/apple-touch-icon.png">
@@ -27,14 +28,14 @@
                 <div class="flex"></div>
                 <div id="header-right">
                     <div id="header-icons">
-                        <button>
+                        <button id="notification-btn">
                             <img  class="icon" src="./assets/notification.png" />
                         </button>
-                        <button>
+                        <button id="plus-btn">
                             <img  class="icon" src="./assets/plus.png" />
                             <span>&#9662;</span>
                         </button>
-                        <button>
+                        <button id="avatar-btn">
                             <img  class="avatar" src="./assets/tebieto.jpeg" />
                             <span>&#9662;</span>
                         </button>
@@ -58,7 +59,7 @@
                 </button>
             </div>
             <div id="contents">
-                <div id="contents-right">
+                <div id="contents-left">
                     <div class="avatar">
                         <img src="./assets/tebieto.jpeg" />
                         <button>
@@ -70,6 +71,70 @@
                         <div class="name">Terry Ebieto</div>
                         <div class="username">tebieto</div>
                         <div class="bio">Software Engineer Extraordinaire</div>
+                    </div>
+                </div>
+                <div id="contents-right">
+                    <div class="search-repo">
+                        <input placeholder="Find a repository..." type="text"  />
+                        <div class="flex"></div>
+                        <div class="search-repo-btns">
+                            <button>
+                                <span>Type: All</span>
+                                <span>&#9662;</span>
+                            </button>
+                            <button>
+                                <span>Language: All</span>
+                                <span>&#9662;</span>
+                            </button>
+                            <button id="new-repo-btn">
+                                <span>New</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="repos">
+                        <div class="repo">
+                            <div class="repo-right">
+                                <div class="repo-name">
+                                    <span>github-profile-buycoin</span>
+                                </div>
+                                <div class="repo-other-info">
+                                    <div class="lang">
+                                        <div class="lang-color" style="background-color:#000;"></div>
+                                        <span>CSS</span>
+                                    </div>
+                                    <div class="date">Updated 7 days ago</div>
+                                </div>
+                            </div>
+                            <div class="flex"></div>
+                            <div class="star-btn">
+                                <button>
+                                    <span>&#x2606;</span>
+                                    <span>Star</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="repo">
+                            <div class="repo-right">
+                                <div class="repo-name">
+                                    <span>github-profile-buycoin</span>
+                                </div>
+                                <div class="repo-other-info">
+                                    <div class="lang">
+                                        <div class="lang-color" style="background-color:#000;"></div>
+                                        <span>CSS</span>
+                                    </div>
+                                    <div class="date">Updated 7 days ago</div>
+                                </div>
+                            </div>
+                            <div class="flex"></div>
+                            <div class="star-btn">
+                                <button>
+                                    <span>&#x2606;</span>
+                                    <span>Star</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

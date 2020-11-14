@@ -2,46 +2,48 @@ body {
     background-color: #fff;
     margin: 0;
     width: 100%;
-    overflow: hidden;
+    font-family: sans-serif;
 }
+
 
 #header {
     background-color: #000;
     width: 100%;
-    height: 60px;
+    height: 58px;
     margin: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-right: 15px;
+    overflow: hidden;
 }
 
 #header-left {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 30px;
 }
 
 #header-left div {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 #header-search {
     border: 1px solid rgba(238, 238, 238, 0.432);
     border-radius: 5px;
-    width: 300px;
+    width: 260px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 4px;
-    transition-duration: 0.5s;
+    transition: width 0.5s;
 }
 
 #header-search:focus-within {
     width: 500px;
     background-color: #fff;
-    transition-duration: 0.5s;
+    transition: width 0.5s;
 }
 
 #header-search:focus-within input::placeholder{
@@ -96,6 +98,7 @@ body {
 #header-links .link {
     cursor: pointer;
     font-weight: bold;
+    font-size: 14px;
 }
 
 #header-icons button{
@@ -145,7 +148,6 @@ body {
     flex-direction: row;
     justify-content: center;
     border-bottom: 1px solid #ddd;
-    z-index: -1;
 }
 
 #sub-header button {
@@ -154,16 +156,22 @@ body {
     padding: 10px;;
     border: none;
     outline: none;
-    cursor: pointer;
     margin-bottom: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     background-color: #fff;
+    z-index: 1;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
 }
 
-#sub-header .active {
-    border-bottom: 2px solid salmon;
+#sub-header button:hover {
+    border-bottom: 2px solid rgba(128, 128, 128, 0.623);
+}
+
+#sub-header .active, #sub-header .active:hover {
+    border-bottom-color: salmon;
 }
 
 #sub-header .active .description {
@@ -181,12 +189,21 @@ body {
     padding: 5px;
 }
 
-#contents-right {
-    position: relative;
-    top: -30px;
+#contents {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-#contents-right .avatar {
+
+#contents-left {
+    position: relative;
+    top: -30px;
+    left: 20px;
+}
+
+#contents-left .avatar {
     position: relative;
     width: 279px;
     height: 279px;
@@ -195,7 +212,7 @@ body {
     margin-left: 30px;
 }
 
-#contents-right .avatar button {
+#contents-left .avatar button {
     background-color: #fff;
     border-radius: 25px;
     position: absolute;
@@ -219,38 +236,232 @@ body {
     align-self: center;
 }
 
-#contents-right .avatar button:hover {
+#contents-left .avatar button:hover {
     width:  100px;
     justify-content: space-between;
     color: rgb(0, 110, 255);
 }
 
-#contents-right .avatar button:hover #set-status{
+#contents-left .avatar button:hover #set-status{
     display: block;
 }
 
-#contents-right .avatar img{
+#contents-left .avatar img{
   border-radius: 50%;
   width: 100%;
 }
 
-#contents-right .profile {
+#contents-left .profile {
     margin-left: 30px;
-    font-family: sans-serif;
 }
 
-#contents-right .profile .name{
+#contents-left .profile .name{
     font-size: 25px;
     font-weight: bold;
 }
 
-#contents-right .profile .username{
+#contents-left .profile .username{
     font-size: 20px;
     margin-bottom: 20px;
     color: rgba(0, 0, 0, 0.568);
 }
 
-#contents-right .profile .bio{
-    font-size: 18px;
-    color: rgba(0, 0, 0, 0.555);
+#contents-left .profile .bio{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.767);
+}
+
+#contents-right {
+    position: relative;
+    top: 40px;
+    width: 70%;
+    margin-right: 20px;
+}
+
+#contents-right .search-repo{
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+#contents-right .search-repo input{
+    width: 62%;
+    height: 30px;
+    padding-left: 10px;
+    outline: none;
+}
+
+#contents-right .search-repo input:focus {
+    border: 1px solid blue;
+    box-shadow: 0 0 0 2px #88b8ffab;
+}
+
+#contents-right .search-repo button{
+    height: 35px;
+    background-color:  rgba(243, 239, 239, 0.582);
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 1px 15px 1px 15px;
+}
+
+#contents-right .search-repo button:hover {
+    background-color: rgba(243, 239, 239, 0.945);
+}
+
+#contents-right .search-repo input, #contents-right .search-repo button {
+    border: 1px solid rgb(214, 207, 207);
+    border-radius: 5px;
+}
+
+#contents-right .search-repo #new-repo-btn{
+   background-color: rgb(9, 170, 9);
+   color: #fff;
+   border: 1px solid rgb(9, 170, 9);;
+   border-radius: 5px;
+}
+
+#contents-right .search-repo #new-repo-btn:hover {
+    background-color: rgba(9, 170, 9, 0.842);
+}
+
+#repos .repo .lang .lang-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 25px;
+    margin-right: 5px;
+}
+
+#repos .repo {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    font-size: 12px;
+    color: rgb(116, 108, 108);
+    display: flex;
+    flex-direction: row;
+}
+
+#repos .repo .repo-right{
+    width: 90%;
+}
+
+#repos .repo-right .lang {
+    display: flex;
+    flex-direction: row;
+}
+
+#repos .repo .repo-name {
+    font-size: 20px;
+    color: rgb(51, 117, 216);
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#repos .repo .repo-name:hover {
+    text-decoration: underline;
+}
+
+
+#repos .repo-right .repo-other-info {
+    display: flex;
+    flex-direction: row;
+}
+
+#repos .repo .date {
+    margin-left: 20px;
+}
+
+#repos .repo .star-btn button {
+    background-color: rgba(243, 239, 239, 0.301);
+    border: 1px solid rgb(214, 207, 207);
+    border-radius: 5px;
+    color: #000;
+    padding: 5px;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+    padding: 1px 10px 1px 10px;
+}
+
+#repos .repo .star-btn  button:hover {
+    background-color: rgba(243, 239, 239, 0.966);
+}
+
+#menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    body, div {
+        overflow-x: hidden;
+    }
+    #menu-icon {
+        display: block;
+        margin-left: 20px;
+    }
+
+    #header-icons button, #header-search, #header-links {
+        display: none;
+    }
+
+    #header-icons #notification-btn {
+        display: block;
+    }
+
+    #header-left {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #logo {
+        position: relative;
+        left: -20px;
+    }
+
+    #contents {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #contents #contents-left, #contents #contents-right {
+        margin: 0;
+        width: 90%;
+        align-self: center;
+    }
+
+    #contents-right .search-repo .flex {
+        display: none;
+    }
+
+    #contents-right .search-repo {
+        flex-direction: column;
+        margin: 0;
+        align-items: center;
+    }
+
+    #contents-right .search-repo input {
+        margin: 0;
+        width: 95%;
+        margin-bottom: 10px;
+    }
+
+    .search-repo-btns {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #contents-right .search-repo button {
+        margin: 0;
+    }
 }

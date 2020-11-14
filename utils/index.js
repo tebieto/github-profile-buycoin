@@ -2,21 +2,32 @@ const API_URL = 'https://api.github.com/graphql';
 const BAD_PRACTICE_DEMO_KEY = '544b71fed9a64753544db364647ebd7f7094e30f';
 
 const queryGithub = maxReposLength => `
-    {
-        viewer {
-        login
-        name
-        bio
-        repositories(first: ${maxReposLength}) {
-            edges {
-            node {
-                id
-                name
+{
+    viewer {
+      login
+      bio
+      avatarUrl(size: 300)
+      name
+      repositories(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
+        edges {
+          node {
+            id
+            name
+            languages(first: 1) {
+              edges {
+                node {
+                  name
+                  color
+                }
+              }
             }
-            }
+            updatedAt
+          }
         }
-        }
+        totalCount
+      }
     }
+  } 
 `;
 
 export const fetchProfileAndRepos = () => {
@@ -34,8 +45,8 @@ export const fetchProfileAndRepos = () => {
     return fetch(API_URL, options)
         .then(res => res.json())
         .then(result => {
-            const { bio, login, name, repositories } = result.data.viewer
-            const userInfo = { bio, login, name };
+            const { bio, login, name, avatarUrl, repositories } = result.data.viewer
+            const userInfo = { bio, login, name, avatarUrl };
             return { userInfo, repositories };
         })
         .catch(error => console.log(error));
