@@ -1,7 +1,6 @@
-import { GITHUB_API_KEY} from '../config.js';
+import { API_KEY_URL } from '../config.js';
 import { getLocalTime } from './date.js'
-const API_URL = 'https://api.github.com/graphql';
-const BAD_PRACTICE_DEMO_KEY = GITHUB_API_KEY;
+const GITHUB_API_URL = 'https://api.github.com/graphql';
 
 const queryGithub = maxReposLength => `
 {
@@ -32,19 +31,26 @@ const queryGithub = maxReposLength => `
 }
 `;
 
-export const fetchProfileAndRepos = () => {
+export const fetchApiKey = () => {
+  return fetch(API_KEY_URL, { method: 'POST' })
+    .then(res => res.json())
+    .then(data => data.key)
+}
+
+export const fetchProfileAndRepos = async () => {
+    const GITHUB_API_KEY = await fetchApiKey();
     const options = {
         method: "post",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `bearer ${BAD_PRACTICE_DEMO_KEY}`
+            "Authorization": `bearer ${GITHUB_API_KEY}`
         },
         body: JSON.stringify({
             query: queryGithub(20)
         })
     };
 
-    return fetch(API_URL, options)
+    return fetch(GITHUB_API_URL, options)
         .then(res => res.json())
         .then(result => {
             const { bio, login, name, avatarUrl, repositories } = result.data.viewer

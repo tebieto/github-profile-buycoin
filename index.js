@@ -17,5 +17,5 @@ fetchProfileAndRepos()
         renderPage(data);
     })
     .catch(error => {
-        alert("Check internet connection, change the GITHUB api key in config.js to a valid one and refresh page")
+        alert("Check internet connection or refresh page")
     });
