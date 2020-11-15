@@ -3,6 +3,8 @@ body {
     margin: 0;
     width: 100%;
     font-family: sans-serif;
+    overflow-x: hidden;
+    min-width: 303px;
 }
 
 
@@ -14,7 +16,6 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-right: 15px;
     overflow: hidden;
 }
 
@@ -22,7 +23,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 #header-left div {
@@ -113,7 +114,7 @@ body {
 }
 
 #header-right {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 #header-icons {
@@ -141,8 +142,8 @@ body {
 }
 
 #sub-header {
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 70px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -190,6 +191,7 @@ body {
 }
 
 #contents {
+    margin-top: 40px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -199,25 +201,26 @@ body {
 
 #contents-left {
     position: relative;
-    top: -30px;
-    left: 20px;
+    top: -5px;
+    z-index: 1;
+    width: 25%;
+    margin: 0 20px 0 20px;
 }
 
-#contents-left .avatar {
+#contents-left .profile .avatar {
     position: relative;
-    width: 279px;
-    height: 279px;
+    width: 100%;
     border-radius: 50%;
-    margin: 20px;
-    margin-left: 30px;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 
-#contents-left .avatar button {
+#contents-left button {
     background-color: #fff;
     border-radius: 25px;
     position: absolute;
-    bottom: 35px;
-    left: 240px;
+    bottom: 140px;
+    left: 82%;
     border: 1px solid #eee;
     outline: none;
     width:  35px;
@@ -236,13 +239,13 @@ body {
     align-self: center;
 }
 
-#contents-left .avatar button:hover {
+#contents-left button:hover {
     width:  100px;
     justify-content: space-between;
     color: rgb(0, 110, 255);
 }
 
-#contents-left .avatar button:hover #set-status{
+#contents-left .profile button:hover #set-status{
     display: block;
 }
 
@@ -251,9 +254,6 @@ body {
   width: 100%;
 }
 
-#contents-left .profile {
-    margin-left: 30px;
-}
 
 #contents-left .profile .name{
     font-size: 25px;
@@ -266,7 +266,7 @@ body {
     color: rgba(0, 0, 0, 0.568);
 }
 
-#contents-left .profile .bio{
+#contents-left .bio{
     font-size: 15px;
     color: rgba(0, 0, 0, 0.767);
 }
@@ -274,8 +274,8 @@ body {
 #contents-right {
     position: relative;
     top: 40px;
-    width: 70%;
-    margin-right: 20px;
+    width: 75%;
+    margin: 0 20px 0 20px;
 }
 
 #contents-right .search-repo{
@@ -287,10 +287,10 @@ body {
 
 
 #contents-right .search-repo input{
-    width: 62%;
     height: 30px;
     padding-left: 10px;
     outline: none;
+    flex: auto;
 }
 
 #contents-right .search-repo input:focus {
@@ -314,6 +314,12 @@ body {
 #contents-right .search-repo input, #contents-right .search-repo button {
     border: 1px solid rgb(214, 207, 207);
     border-radius: 5px;
+}
+
+#contents-right .search-repo .search-repo-btns{
+    display: flex;
+    flex-direction: row;
+    padding: 0;
 }
 
 #contents-right .search-repo #new-repo-btn{
@@ -344,11 +350,11 @@ body {
     flex-direction: row;
 }
 
-#repos .repo .repo-right{
+#repos .repo .repo-left{
     width: 90%;
 }
 
-#repos .repo-right .lang {
+#repos .repo-left .lang {
     display: flex;
     flex-direction: row;
 }
@@ -366,7 +372,7 @@ body {
 }
 
 
-#repos .repo-right .repo-other-info {
+#repos .repo-left .repo-other-info {
     display: flex;
     flex-direction: row;
 }
@@ -380,11 +386,11 @@ body {
     border: 1px solid rgb(214, 207, 207);
     border-radius: 5px;
     color: #000;
-    padding: 5px;
     font-size: 15px;
     outline: none;
     cursor: pointer;
     padding: 1px 10px 1px 10px;
+    width: 70px;
 }
 
 #repos .repo .star-btn  button:hover {
@@ -396,9 +402,6 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-    body, div {
-        overflow-x: hidden;
-    }
     #menu-icon {
         display: block;
         margin-left: 20px;
@@ -426,14 +429,18 @@ body {
     }
 
     #contents {
+        position: relative;
+        margin: 0;
+        margin-top: 5px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
     #contents #contents-left, #contents #contents-right {
+        position: relative;
         margin: 0;
-        width: 90%;
+        width: 95%;
         align-self: center;
     }
 
@@ -448,20 +455,71 @@ body {
     }
 
     #contents-right .search-repo input {
+        position: relative;
         margin: 0;
-        width: 95%;
-        margin-bottom: 10px;
+        width: 98%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        padding-left: 2%;
     }
 
-    .search-repo-btns {
+    #contents-right .search-repo .search-repo-btns {
         width: 100%;
         margin: 0;
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
     }
 
     #contents-right .search-repo button {
         margin: 0;
+    }
+
+    #sub-header {
+        position: relative;
+        top: 0;
+        margin: 0;
+        margin-top: 40px;
+        overflow-x: auto;
+    }
+    
+
+    #contents-left,   #contents-left .profile{
+        width: 100%;
+        margin: 0;
+        top: 0;
+        left: 0;
+    }
+
+    #contents-left button, #contents-left button:hover {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-radius: 5px;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+    }
+
+    #set-status {
+        display: block;
+        margin-left: 5px;
+    }
+
+    #contents-left .bio{
+        margin-left: 0;
+    }
+
+    #contents-left .profile .avatar {
+        width: 80px;
+        height: 80px;
+    }
+
+    #contents-left .profile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #contents-left #personal-info {
+        margin-left: 20px;
     }
 }

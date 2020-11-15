@@ -43,49 +43,52 @@
                 </div>
             </div>
 
-            <div id="sub-header">
-                <button>
-                    <span>Overview</span>
-                </button>
-                <button class="active">
-                    <span class="description">Repositories</span>
-                    <div class="count">40</div>
-                </button>
-                <button>
-                    <span>Projects</span>
-                </button>
-                <button>
-                    <span>Packages</span>
-                </button>
-            </div>
             <div id="contents">
                 <div id="contents-left">
-                    <div class="avatar">
-                        <img src="./assets/tebieto.jpeg" />
-                        <button>
-                            <span>&#9786;</span>
-                            <span id="set-status">Set status</span>
-                        </button>
-                    </div>
                     <div class="profile">
-                        <div class="name">Terry Ebieto</div>
-                        <div class="username">tebieto</div>
-                        <div class="bio">Software Engineer Extraordinaire</div>
+                        <div class="avatar">
+                            <img src="./assets/tebieto.jpeg" />
+                        </div>
+                        <div id="personal-info">
+                            <div class="name">Terry Ebieto</div>
+                            <div class="username">tebieto</div>
+                        </div>
                     </div>
+                    <button>
+                        <span>&#9786;</span>
+                        <span id="set-status">Set status</span>
+                    </button>
+                    <div class="bio">Software Engineer Extraordinaire</div>
+                </div>
+                <div id="sub-header">
+                    <button>
+                        <span>Overview</span>
+                    </button>
+                    <button class="active">
+                        <span class="description">Repositories</span>
+                        <div class="count">40</div>
+                    </button>
+                    <button>
+                        <span>Projects</span>
+                    </button>
+                    <button>
+                        <span>Packages</span>
+                    </button>
                 </div>
                 <div id="contents-right">
                     <div class="search-repo">
                         <input placeholder="Find a repository..." type="text"  />
-                        <div class="flex"></div>
                         <div class="search-repo-btns">
-                            <button>
-                                <span>Type: All</span>
-                                <span>&#9662;</span>
-                            </button>
-                            <button>
-                                <span>Language: All</span>
-                                <span>&#9662;</span>
-                            </button>
+                            <div class="select-btns">
+                                <button>
+                                    <span>Type: All</span>
+                                    <span>&#9662;</span>
+                                </button>
+                                <button>
+                                    <span>Language: All</span>
+                                    <span>&#9662;</span>
+                                </button>
+                            </div>
                             <button id="new-repo-btn">
                                 <span>New</span>
                             </button>
@@ -94,7 +97,7 @@
 
                     <div id="repos">
                         <div class="repo">
-                            <div class="repo-right">
+                            <div class="repo-left">
                                 <div class="repo-name">
                                     <span>github-profile-buycoin</span>
                                 </div>
@@ -115,7 +118,7 @@
                             </div>
                         </div>
                         <div class="repo">
-                            <div class="repo-right">
+                            <div class="repo-left">
                                 <div class="repo-name">
                                     <span>github-profile-buycoin</span>
                                 </div>
