@@ -218,9 +218,9 @@ body {
 #contents-left button {
     background-color: #fff;
     border-radius: 25px;
-    position: absolute;
-    bottom: 140px;
-    left: 82%;
+    position: relative;
+    bottom: 160px;
+    left: 89%;
     border: 1px solid #eee;
     outline: none;
     width:  35px;
@@ -245,7 +245,7 @@ body {
     color: rgb(0, 110, 255);
 }
 
-#contents-left .profile button:hover #set-status{
+#contents-left button:hover #set-status{
     display: block;
 }
 
@@ -261,13 +261,13 @@ body {
 }
 
 #contents-left .profile .username{
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 18px;
     color: rgba(0, 0, 0, 0.568);
 }
 
 #contents-left .bio{
-    font-size: 15px;
+    font-size: 16px;
+    margin-top: -15px;
     color: rgba(0, 0, 0, 0.767);
 }
 
@@ -377,8 +377,8 @@ body {
     flex-direction: row;
 }
 
-#repos .repo .date {
-    margin-left: 20px;
+#repos .repo .lang {
+    margin-right: 20px;
 }
 
 #repos .repo .star-btn button {
@@ -505,7 +505,7 @@ body {
     }
 
     #contents-left .bio{
-        margin-left: 0;
+        margin: 0;
     }
 
     #contents-left .profile .avatar {

@@ -1,0 +1,1 @@
+export const GITHUB_API_KEY = '15c6f4e5366a074652b30d5df80a15f60019e9ac';

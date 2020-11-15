@@ -1,33 +1,35 @@
+import { GITHUB_API_KEY} from '../config.js';
+import { getLocalTime } from './date.js'
 const API_URL = 'https://api.github.com/graphql';
-const BAD_PRACTICE_DEMO_KEY = '544b71fed9a64753544db364647ebd7f7094e30f';
+const BAD_PRACTICE_DEMO_KEY = GITHUB_API_KEY;
 
 const queryGithub = maxReposLength => `
 {
-    viewer {
-      login
-      bio
-      avatarUrl(size: 300)
-      name
-      repositories(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
-        edges {
-          node {
-            id
-            name
-            languages(first: 1) {
-              edges {
-                node {
-                  name
-                  color
-                }
+  viewer {
+    login
+    bio
+    avatarUrl(size: 300)
+    name
+    repositories(first: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
+      edges {
+        node {
+          id
+          name
+          languages(first: 1) {
+            edges {
+              node {
+                name
+                color
               }
             }
-            updatedAt
           }
+          updatedAt
         }
-        totalCount
       }
+      totalCount
     }
-  } 
+  }
+}
 `;
 
 export const fetchProfileAndRepos = () => {
@@ -47,7 +49,17 @@ export const fetchProfileAndRepos = () => {
         .then(result => {
             const { bio, login, name, avatarUrl, repositories } = result.data.viewer
             const userInfo = { bio, login, name, avatarUrl };
-            return { userInfo, repositories };
+            const { totalCount, edges } = repositories;
+
+            const repos = edges.map(repo => {
+              const {name, updatedAt: time, languages} = repo.node;
+              const updatedAt = getLocalTime(time);
+              const edges = languages.edges[0];
+              let lang;
+              if(edges) lang = edges.node;
+              return { name, updatedAt, lang };
+            });
+
+            return { userInfo, repos, totalCount};
         })
-        .catch(error => console.log(error));
 };
