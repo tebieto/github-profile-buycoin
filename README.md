@@ -3,7 +3,7 @@
 ### Instructions
 
 - Clone project
-- Host locally (localhost) or on any web hosting platform online
+- Host locally (localhost) or on any web hosting platform
 - Open with a Javascript enabled browser
 - Ensure you are connected to the internet
 - This app was built for demonstration purpose only. It has just one page.
